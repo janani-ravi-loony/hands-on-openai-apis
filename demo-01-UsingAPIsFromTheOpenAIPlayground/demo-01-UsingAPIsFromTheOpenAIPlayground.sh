@@ -10,14 +10,28 @@ https://platform.openai.com/docs/overview
 
 # Click on each model
 
+GPT-5
+gpt-5-mini
+gpt-5-nano
 GPT-4.1
-o4-mini
-o3
 
-# Tokens in OpenAI
 
-https://help.openai.com/en/articles/4936856-what-are-tokens-and-how-to-count-them
+# GPT‑5 is a unified system with a smart, efficient model that answers most questions, a deeper reasoning model (GPT‑5 thinking) for harder problems, and a real‑time router that quickly decides which to use based on conversation type, complexity, tool needs, and your explicit intent (for example, if you say “think hard about this” in the prompt). 
 
+# GPT-5 replaces the old refusal-based safety approach with “safe completions.” Instead of simply blocking a request that might be unsafe, it gives you as much helpful, safe information as possible while explaining any limitations. It also reduces sycophancy—those overly agreeable answers that sometimes made earlier models feel inauthentic.
+
+# In the API, you can now control the model’s depth of thought with the reasoning_effort parameter, which adds a new “minimal” setting for faster responses when you don’t need detailed reasoning. There’s also a verbosity parameter to control whether answers are short, medium, or long without changing your prompt.
+
+# Better at long-running, multi-step tasks
+# The model is significantly better at handling long-running agentic tasks. It can chain together dozens of tool calls—both in sequence and in parallel—without losing track of context.
+
+# Improved front-end coding
+# In internal testing, GPT-5 beat OpenAI o3 in front-end development scenarios 70% of the time, producing cleaner, more aesthetic interfaces with better default layouts, typography, and spacing.
+
+# Longer context, fewer hallucinations
+# In the API, GPT-5 supports a combined input and output context length of 400K tokens. Benchmarks show it retrieving information more accurately from large inputs than previous models, while also cutting hallucination rates dramatically on factual tasks.
+
+# Click on "Compare models" and show how the different models compare
 
 # Click through to one of the models -> will take us to the intro page for all models
 
@@ -32,6 +46,11 @@ input and output modalities
 price per 1mm tokens
 
 # Notice that every model has versions (with release dates) - click on the drop down next to the model to get the release date
+
+
+# Tokens in OpenAI
+
+https://help.openai.com/en/articles/4936856-what-are-tokens-and-how-to-count-them
 
 # Tokens can be thought of as pieces of words. Before the API processes the request, the input is broken down into tokens. These tokens are not cut up exactly where the words start or end - tokens can include trailing spaces and even sub-words. Here are some helpful rules of thumb for understanding tokens in terms of lengths:
 
@@ -50,15 +69,14 @@ https://openai.com/api/pricing/
 
 ------------------------------------------------------
 
-# Click on Playground on the top-right and this will take you to the Open AI Playground
+# Click on Dashboard on the top-right and this will take you to the Open AI Playground
 
 # Note that there are 3 options on the left - explain each
 
-Prompts
+Chat
+Audio
 Images
-Realtime
 Assistants
-TTS
 
 #############################################
 # Reasoning models
@@ -83,7 +101,87 @@ TTS
 Open AI Playground
 --------------------------------------------------------
 
-# Click on the models drop down and show all the models (make sure you click on show more)
+--------------------------------------------------------
+GPT-5
+--------------------------------------------------------
+
+
+# Click on the models drop down and show all the models 
+
+"Model": "gpt-5"
+
+# Don't set anything in system
+
+# Prompt
+
+"""
+I'd like to learn more about prompt engineering, how do you recommend I start?
+"""
+
+# Show the reasoning tokens - this model asks itself a bunch of context specific questions before responding
+
+# Show the model options 
+
+Text format
+Reasoning effort
+Verbosity
+Summary
+
+---------------------------
+
+# Set summary to null
+
+
+# Clear out the prompt and the response and ask the same question again
+
+"""
+I'd like to learn more about prompt engineering, how do you recommend I start?
+"""
+
+# Note you get a faster response and you cannot see the model's reasoning
+
+---------------------------
+
+
+# Set reasoning effort to minimal
+
+# Clear out the prompt and the response and ask the same question again
+
+"""
+I'd like to learn more about prompt engineering, how do you recommend I start?
+"""
+
+# Note that it uses no reasoning tokens
+
+--------------------------------------------------
+
+# Set reasoning effort -> high
+
+# Set verbosity -> low
+
+
+# Summary: auto
+
+You are an expert urban planner tasked with optimizing traffic flow across a growing city with only two main arteries and increasing congestion.
+
+Your goal: Propose a multi-phase, scalable infrastructure plan addressing current bottlenecks and anticipating future expansion over the next 20 years.
+
+Please provide:
+• A direct, actionable high-level strategy overview.
+• Your detailed reasoning process—describe how you evaluated trade-offs, considered constraints, and decided on each phase.
+• Optional alternative approaches or contingency options.
+• A concise summary of the next immediate step that can kick off implementation.
+
+Use structured bullet points or numbered lists for clarity.
+
+
+--------------------------------------------------------
+Other GPT models
+--------------------------------------------------------
+
+------------------------------------------------
+
+# Click on the models drop down and show all the models 
 
 "Model": "gpt-4.1"
 
@@ -108,8 +206,6 @@ I'd like to learn more about prompt engineering, how do you recommend I start?
 # Submit the same prompt again
 
 # You will get a much shorter response (note the latency and the number of tokens in the response)
-
---------------------------------------------------
 
 
 ----------------------------------------------------------------
@@ -164,7 +260,7 @@ Q: How would you poetically describe the relationship between classes and object
 
 # Set up the first one gpt-4.1
 
-# Set up the second one gpt-o4-mini
+# Set up the second one gpt-5
 
 # System message
 
@@ -189,6 +285,15 @@ Maintain a neutral, factual tone, avoiding personal opinions or biases.
 What do you think is the impact of tariffs on any economy?
 
 # Show the difference in the responses between the two models
+
+---------------------------------------
+
+# Let's see if gpt-5 indeed lacks empathy
+
+# Clear the previous system messages
+
+I’ve been feeling invalidated and sidelined at work. My contributions get overlooked, and I worry sharing them will just backfire. It’s making me question my own abilities and is affecting my motivation. I’d like help understanding how to cope with this and assert myself effectively.
+
 
 
 ----------------------------------------------------------------
@@ -384,7 +489,7 @@ Can you give me a short poem on how programming is fun?
 # Function calling
 ----------------------------------------------------------------
 
-# Select any latest model
+# Select any latest model - gpt-5
 
 # New session
 
@@ -478,7 +583,7 @@ How do I set a screen lock?
 
 
 ----------------------------------------------------------------
-# File search
+# Web Search
 ----------------------------------------------------------------
 
 # Remove the previous tools
