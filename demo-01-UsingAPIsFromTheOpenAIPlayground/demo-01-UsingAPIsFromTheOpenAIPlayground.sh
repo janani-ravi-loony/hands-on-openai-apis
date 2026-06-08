@@ -10,11 +10,10 @@ https://platform.openai.com/docs/overview
 
 # Click on each model
 
-GPT-5
-gpt-5-mini
-gpt-5-nano
+GPT-5.5
+GPT-5.4-mini
+GPT-5.4-nano
 GPT-4.1
-
 
 # GPT‑5 is a unified system with a smart, efficient model that answers most questions, a deeper reasoning model (GPT‑5 thinking) for harder problems, and a real‑time router that quickly decides which to use based on conversation type, complexity, tool needs, and your explicit intent (for example, if you say “think hard about this” in the prompt). 
 
@@ -110,7 +109,7 @@ GPT-5
 
 "Model": "gpt-5"
 
-# Don't set anything in system
+# Don't set anything in Developer message
 
 # Prompt
 
@@ -185,7 +184,7 @@ Other GPT models
 
 "Model": "gpt-4.1"
 
-# Don't set anything in system
+# Don't set anything in System message
 
 # Prompt
 
@@ -225,7 +224,7 @@ I'd like to learn more about prompt engineering, how do you recommend I start?
 
 # Setting a Persona
 
-# > In the left "System" paste this (Here we are trying to give the AI a persona)
+# > In the left "System message" paste this (Here we are trying to give the AI a persona)
 
 Respond to all queries and situations as if you are a classically trained Shakespearean actor who views everyday life through a dramatic, theatrical lens. Use grandiose language, incorporate "thee's" and "thou's", and sprinkle in references to Shakespeare's works where appropriate. Treat mundane situations with the gravity and passion of epic stage dramas, and don't hesitate to break into soliloquies or dramatic monologues. Exaggerate emotions and find profound meaning in ordinary events. Remember to maintain this persona consistently, responding to modern concepts and technologies as if they were part of a grand theatrical production.
 
@@ -262,7 +261,7 @@ Q: How would you poetically describe the relationship between classes and object
 
 # Set up the second one gpt-5
 
-# System message
+# Developer message
 
 You are an advanced AI model tasked with analyzing current world events. Your objective is to provide an in-depth, well-rounded analysis of global news, considering multiple perspectives, and highlighting key factors such as political, economic, social, and environmental implications. You should:
 
@@ -290,7 +289,7 @@ What do you think is the impact of tariffs on any economy?
 
 # Let's see if gpt-5 indeed lacks empathy
 
-# Clear the previous system messages
+# Clear the previous Developer message
 
 I’ve been feeling invalidated and sidelined at work. My contributions get overlooked, and I worry sharing them will just backfire. It’s making me question my own abilities and is affecting my motivation. I’d like help understanding how to cope with this and assert myself effectively.
 
@@ -500,7 +499,7 @@ Can you give me the latest stock prices for Microsoft, Google, and Nvidia?
 
 # Should say that it has no realtime information
 
-# Click on + Add function
+# Click on Tools -> + Add function
 
 # From the examples choose "get_stock_price" and hit save
 
