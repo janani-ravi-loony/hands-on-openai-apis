@@ -4,6 +4,8 @@ Install and set up Open AI
 
 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
 
+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
+
 # Go to this URL
 https://platform.openai.com/docs/quickstart
 
@@ -45,12 +47,13 @@ export OPENAI_API_KEY='your-api-key-here'
 curl https://api.openai.com/v1/models \
   -H "Authorization: Bearer $OPENAI_API_KEY"
 
+
 # Show large number of models returned
 
 # Let's retrieve the details of some specific models
 
 
-curl https://api.openai.com/v1/models/dall-e-3 \
+curl https://api.openai.com/v1/models/gpt-image-2 \
   -H "Authorization: Bearer $OPENAI_API_KEY"
 
 
@@ -62,7 +65,7 @@ curl https://api.openai.com/v1/responses \
     -H "Content-Type: application/json" \
     -H "Authorization: Bearer $OPENAI_API_KEY" \
     -d '{
-        "model": "gpt-4.1",
+        "model": "gpt-5.5",
         "input": "Can you explain how machine learning works?"
     }'
 
@@ -133,7 +136,7 @@ curl https://api.openai.com/v1/chat/completions \
   -H "Content-Type: application/json" \
   -H "Authorization: Bearer $OPENAI_API_KEY" \
   -d '{
-    "model": "gpt-4",
+    "model": "gpt-5.5",
     "messages": [
       {
         "role": "system",
@@ -153,13 +156,6 @@ curl https://api.openai.com/v1/chat/completions \
       }
     ]
   }'
-
-
-
-
-
-
-
 
 
 
